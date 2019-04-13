@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="/static/bower_components/angular-tooltips/dist/angular-tooltips.min.css" />
+<link rel="stylesheet" type="text/css" type="text/css" href="/selfie-quote/styles/css/sf_style.css" />
+<meta name="viewport" content="width=device-width, user-scalable=0">
+<div style="position:absolute;z-index:1;" bs-loading-overlay></div>
+<div class="container">
+    <header class="header-Top-md">
+        <div class="logo pull-left"><img src="/static/images/logo.png" /></div>
+        <div class="helt-call pull-right ">
+            <h4 style="color:#0099cc !important; margin-bottom:0px">SelfieQuote<sup class="sup_style">SM</sup></h4>
+              <div class="pull-right beta">BETA</div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
+</div>
+<div class="age-through-cover-title1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 home1-row-margin-left">
+                <div class="clearfix"></div>
+                <div class="responciv_tex visible-sm visible-md visible-lg" ng-bind-html = "ui_attributes.selfie_header">
+                </div>
+                  <div class="responciv_tex visible-xs" ng-bind-html = "ui_attributes.selfie_header_m">
+                    </div>
+                    <div ng-hide = "IsIE">
+                      <div class="back">
+                        <img ng-src="/static/images/selfie-loop.gif" class="img-circle img-responsive home1-img-circle-height"  alt="icons"/>
+                      </div>
+                    </div>
+                    <div ng-show = "IsIE">
+                      <div class="back">
+                        <img ng-src="/static/images/selfie-loop2.gif" class="img-circle img-responsive home1-img-circle-height"  alt="icons"/>
+                      </div>
+                    </div>
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tabs_line">
+              <!--Make sure there is enough light to show your facial features clearly. -->
+                <p style="margin: 0 2% 0 2%;" ng-bind-html = "ui_attributes.selfie_text"></p>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<div class="botm">
+    <div class="container">
+        <div class="col-md-12 col-xs-12 col-sm-12">
+            <div class="box" style="margin: 2% 0px 30px 0px !important">
+              <input type="file" id="file-1" class="inputfile inputfile-1" accept="image/*"
+              onchange="angular.element(this).scope().fileNameChanged(this.files)" name="filUpload"/>
+                <label for="file-1">
+                    <img src="/static/images/chevron.png" alt="icon" class="home1-btn-img" style="height:15px; width:15px;">
+                    <span ng-bind-html = "ui_attributes.selfie_submit_button"></span>
+                </label>
+                <!--<input type="file" accept="image/*" image="image" fileinput="file" value=" SUBMIT A SELFIE" filepreview="filepreview"/>-->
+            </div>
+        </div>
+        <div class="col-md-12 col-xs-12 col-sm-12 bottom-text" style="font-size:13px; text-align:center; padding-right: 10%; padding-left:7.5%">
+          Your selfie will be used to to provide an estimate for life insurance based on an estimate of your age, gender, and BMI.  By clicking “Submit a Selfie” you confirm that you are 20 years of age or older and agree to the <a class = "hand"  href="https://www.lgamerica.com/corporate/privacy" target="__main__" style="color: blue !important; background-color: transparent">Privacy Policy.</a>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>

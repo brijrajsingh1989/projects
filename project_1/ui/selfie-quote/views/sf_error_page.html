@@ -1,0 +1,181 @@
+<div class="container">
+    <header class="header-Top-md">
+        <div class="logo pull-left"><img src="/static/images/logo.png" /></div>
+        <div class="helt-call pull-right ">
+            <h4 style="color:#0099cc !important; margin-bottom:0px">SelfieQuote<sup class="sup_style">SM</sup></h4>
+            <div class="pull-right beta">BETA</div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
+</div>
+<div class="container visible-sm visible-md visible-lg" style="padding-left:0px !important; padding-right:20px !important;">
+<div class="age-through-cover-title1 error-page-content" style="padding-top:40px;padding-bottom:40px !important;">
+    <div class="container"  style="padding-left:30px !important; padding-right:30px !important;">
+        <div class="row">
+            <div class="error-page-box">
+              <img  src="/static/images/excl.png" class="home5-img-excl error-page-bullet" alt="blank"/>
+              <h3 class="home5-img-excl-text error-page-text" ng-bind-html="ui_attributes.selfie_error_paragraph_title"></h3>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+</div>
+<div class="container visible-xs" style="padding-left:0px !important; padding-right:0px !important;">
+<div class="age-through-cover-title1" style="padding-top:25px;padding-bottom:50px;">
+    <div class="container"  style="padding-left:0px !important; padding-right:0px !important;">
+        <div class="row">
+            <div class="col-xs-12 home-img-md-box" style="text-align:center;">
+                  <img  src="/static/images/excl.png" class="home5-img-excl" alt="blank"/>
+            </div>
+
+            <div class="col-xs-12" class="home5-img-excl-md-text">
+                  <h3 class="home5-img-excl-text"  style="text-align:center !important;"> Uh oh. Looks like your photo didn’t work.</h3>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tabs_line-home5" style="margin: 20px 0 0 0;">
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<div class="container" ng-if="headerText">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tabs_line-home5" style="margin: 10px 0 0 0;">
+                <p>For best results:</p>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<div class="container" ng-if="!headerText">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tabs_line-home5" style="margin: 10px 0 0 0;">
+        	<p style="margin: 0 2% 0 2%;">{{ErrorMessage}}</p>
+	</div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<div class="botm" ng-show="!headerText">
+    <div class="container">
+        <div class="col-md-12 col-xs-12 col-sm-12">
+            <div class="box" style="margin-top:15px; margin-bottom: 0.75%">
+              <input type="file" id="file-1" class="inputfile inputfile-1" accept="image/*"
+              onchange="angular.element(this).scope().fileNameChanged(this.files)"/>
+               <label for="file-1">
+                    <img src="/static/images/chevron.png" style="height: 15px; width:15px" alt="icon" class="home1-btn-img">
+                    <span ng-bind-html="ui_attributes.selfie_error_try_another_photo_button">TRY ANOTHER PHOTO</span>
+                </label>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+
+<div class="container visible-xs">
+  <div style="display: flex; align-items: center; justify-content: center">
+    <div class="row" style="margin-top:15px; margin-bottom:15px">
+        <div class="col-md-4 col-sm-4">
+        </div>
+        <div class="col-md-8 col-sm-8 home-img-bullet-pad-left">
+              <img  src="/static/images/bullet.png" class="home5-img-bullet error-page-bullet-width" alt="blank"/>
+              <p style="margin: 1px" class="error-page-text-width" ng-bind-html="ui_attributes.selfie_error_instruction_1"></p>
+        </div>
+        <div class="col-md-4 col-sm-4">
+        </div>
+        <div class="col-md-8 col-sm-8 home-img-bullet-pad-left">
+              <img  src="/static/images/bullet.png" class="home5-img-bullet error-page-bullet-width" alt="blank"/>
+              <p style="margin: 1px" class="error-page-text-width" ng-bind-html="ui_attributes.selfie_error_instruction_2"></p>
+        </div>
+        <div class="col-md-4 col-sm-4">
+        </div>
+        <div class="col-md-8 col-sm-8 home-img-bullet-pad-left" >
+            <img  src="/static/images/bullet.png" class="home5-img-bullet error-page-bullet-width" alt="blank"/>
+            <p style="margin: 1px" class="error-page-text-width" ng-bind-html="ui_attributes.selfie_error_instruction_3"></p>
+        </div>
+        <div class="col-md-4 col-sm-4">
+        </div>
+        <div class="col-md-8 col-sm-8 home-img-bullet-pad-left" >
+            <img  src="/static/images/bullet.png" class="home5-img-bullet error-page-bullet-width" alt="blank"/>
+            <p style="margin: 1px" class="error-page-text-width" ng-bind-html="ui_attributes.selfie_error_instruction_4"></p>
+        </div>
+        <div class="col-md-4 col-sm-4">
+        </div>
+        <div class="col-md-8 col-sm-8 home-img-bullet-pad-left">
+            <img  src="/static/images/bullet.png" class="home5-img-bullet error-page-bullet-width" alt="blank"/>
+            <p style="margin: 1px" class="error-page-text-width" ng-bind-html="ui_attributes.selfie_error_instruction_5"></p>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+</div>
+
+
+<div class="container visible-sm visible-md visible-lg">
+    <div class="row" style="margin-top:15px; margin-bottom:15px">
+        <div class="col-md-4 col-sm-4">
+        </div>
+        <div class="col-md-8 col-sm-8 home-img-bullet-pad-left">
+              <img  src="/static/images/bullet.png" class="home5-img-bullet error-page-bullet-width" alt="blank"/>
+              <p style="margin: 1px" class="error-page-text-width"  ng-bind-html="ui_attributes.selfie_error_instruction_1"></p>
+        </div>
+        <div class="col-md-4 col-sm-4">
+        </div>
+        <div class="col-md-8 col-sm-8 home-img-bullet-pad-left">
+              <img  src="/static/images/bullet.png" class="home5-img-bullet error-page-bullet-width" alt="blank"/>
+              <p style="margin: 1px" class="error-page-text-width"  ng-bind-html="ui_attributes.selfie_error_instruction_2"></p>
+        </div>
+        <div class="col-md-4 col-sm-4">
+        </div>
+        <div class="col-md-8 col-sm-8 home-img-bullet-pad-left" >
+            <img  src="/static/images/bullet.png" class="home5-img-bullet error-page-bullet-width" alt="blank"/>
+            <p style="margin: 1px" class="error-page-text-width" ng-bind-html="ui_attributes.selfie_error_instruction_3"></p>
+        </div>
+        <div class="col-md-4 col-sm-4">
+        </div>
+        <div class="col-md-8 col-sm-8 home-img-bullet-pad-left" >
+            <img  src="/static/images/bullet.png" class="home5-img-bullet error-page-bullet-width" alt="blank"/>
+            <p style="margin: 1px" class="error-page-text-width" ng-bind-html="ui_attributes.selfie_error_instruction_4"></p>
+        </div>
+        <div class="col-md-4 col-sm-4">
+        </div>
+        <div class="col-md-8 col-sm-8 home-img-bullet-pad-left">
+            <img  src="/static/images/bullet.png" class="home5-img-bullet error-page-bullet-width" alt="blank"/>
+            <p style="margin: 1px" class="error-page-text-width" ng-bind-html="ui_attributes.selfie_error_instruction_5"></p>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+
+
+
+<div class="botm" ng-show="headerText">
+    <div class="container">
+        <div class="col-md-12 col-xs-12 col-sm-12">
+            <div class="box" style="margin-top:15px; margin-bottom: 0.75%">
+              <input type="file" id="file-1" class="inputfile inputfile-1" accept="image/*"
+              onchange="angular.element(this).scope().fileNameChanged(this.files)"/>
+                <label for="file-1">
+                    <img src="/static/images/chevron.png" style = "height:15px; width:15px" alt="icon" class="home1-btn-img">
+                    <span ng-bind-html="ui_attributes.selfie_error_try_another_photo_button"></span>
+                </label>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>

@@ -1,0 +1,227 @@
+<!--
+  <link rel="stylesheet" href="/static/bower_components/angular-tooltips/dist/angular-tooltips.min.css" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="/selfie-quote/styles/css/sf_style.css" />
+<meta name="viewport" content="width=device-width, user-scalable=0">
+-->
+  <style>
+  .rot {
+        -ms-transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+      }
+  </style>
+<div class="container ">
+    <header class="header-Top-md">
+        <div class="logo pull-left"><img src="/static/images/logo.png" /></div>
+        <div class="helt-call pull-right ">
+            <h4 style="color:#0099cc !important; margin-bottom:0px">SelfieQuote<sup class="sup_style">SM</sup></h4>
+            <div class="pull-right beta">BETA</div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
+
+</div>
+<div class="con_bg_sign top-margin-strip-home3 visible-xs" id="gradientLine"></div>
+<div class="con_bg_sign top-margin-strip-home3 visible-sm visible-md visible-lg"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p ng-show = "showQuoteFlag" class="top-tex" ng-bind-html = "ui_attributes.selfie_estimate_header">
+            </p>
+            <p ng-hide = "showQuoteFlag" class="top-tex" ng-bind-html="ui_attributes.selfie_estimate_header"></p>
+        </div>
+    </div>
+</div>
+
+<div class="screen_2">
+    <div class="container" ng-show = "showQuoteFlag">
+        <div class="row">
+            <div class="col-lg-4 col-md-3 col-sm-2"></div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-5 home3-selfi-img" style="display: flex; align-items: right; justify-content: flex-end;">
+              <div class="profil_pick">
+                  <img ng-src="{{oriented_image_blob}}" class="img-circle img-responsive home3-profile-img" alt="" style="z-index: 1;
+                  display: inline-block;object-fit: cover;" ng-hide="IsIE" />
+                  <div id="imagepreview1" class="img-circle img-responsive home3-profile-img" style="width: 130px;height: 130px;background-size: cover;background-position: center;border-radius: 50%;image-orientation: from-image;" ng-show ="IsIE"></div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-4 col-xs-7 nopad">
+                <div class="user_new"><div class="text_type">
+                    <h1>${{quotePageInput.calculatedPremium}}*</h1>
+                    <h2>Monthly</h2>
+                    <p>For a $100,000 {{termDuration}}-year term policy</p>
+                </div></div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-2"></div>
+        </div>
+    </div>
+
+
+
+    <div class="container" ng-hide = "showQuoteFlag">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 home3-selfi-img" style="display: flex; align-items:center; justify-content:center">
+              <div class="profil_pick" style="  text-align: center">
+                <img ng-src="{{oriented_image_blob}}" class="img-circle img-responsive home3-profile-img" alt="" style="z-index: 1;
+                display: inline-block;object-fit: cover;" ng-hide="IsIE" >
+                <div id="imagepreview2" class="img-circle img-responsive home3-profile-img" style="width: 130px;height: 130px;background-size: cover;background-position: center;border-radius: 50%;image-orientation: from-image;" ng-show = "IsIE"></div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="clearfix"></div>
+</div>
+
+<div class="container">
+    <div class="tabs_bott">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-4 nopad">
+                <h1 ng-bind-html = "ui_attributes.selfie_estimate_age"></h1>
+                <span>{{quotePageInput.userAge}} Years</span>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4 bdr">
+                <h1 ng-bind-html = "ui_attributes.selfie_estimate_gender"></h1>
+                <span>{{quotePageInput.userGender}}</span>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4 ">
+              <label class="bmi-label">
+              <!--suppress HtmlUnknownTag, HtmlUnknownTag -->
+                  <h1 style="display: inline;padding-bottom: 6px;" ng-bind-html = "ui_attributes.selfie_estimate_bmi"></h1>
+              <img src="/static/images/qt-tag.png"
+                tooltips
+                tooltip-template="<b>Body Mass Index (BMI)</b> is an indicator of your body fat and can tell you whether you are underweight, normal, overweight, or obese. Normal BMI (male and female) is 18.5 to 24.9."
+                tooltip-hide-trigger="touchend mouseleave"
+                tooltip-show-trigger="mouseover click"
+                tooltip-side = "left"
+                class="img-responsive bmi-img" alt=""style="display: inline;margin-bottom:2px;font-size:16px;" >
+            </label>
+                <span >{{quotePageInput.userBMI}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="form">
+    <div class="home3-info-fild">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="t-ce" ng-bind-html = "ui_attributes.selfie_estimate_question"></h2>
+                </div>
+                <div class="clearfix"></div>
+
+                <div class="col-md-3 col-sm-6 home3-your-gender-margin">
+                    <label for="exampleInputEmail1" style="margin-left:0px;" class="t-ce" ng-bind-html = "ui_attributes.selfie_estimate_gender_confirm"></label>
+                    <div class="martial-select">
+                        <a href="javascript:;" ng-class="(quotePageInput.userGender == 'Male')?'gender-male':'gender-female'" ng-model="quotePageInput.userGender" ng-click="quotePageInput.userGender = 'Male'">Male </a>
+                        <a href="javascript:;" ng-class="(quotePageInput.userGender == 'Female')?'gender-male':'gender-female'" ng-click="quotePageInput.userGender = 'Female'">Female</a>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-5 col-xs-12 home3-your-birthdate-margin">
+                    <div class="date-bx">
+                        <label for="dtp_input2" style="margin-left:0px;" class="control-label t-ce"  ng-bind-html="ui_attributes.selfie_estimate_dob_confirm"></label>
+
+                        <input ng-class="{'invalid-form':	formSubmitted== true && (quotePageInput.userDob === null || quotePageInput.userDob === '' || quotePageInput.userDob === undefined)}" class="form-control"  maxlength="15" required name="dob" ng-model="quotePageInput.userDob"
+                        onkeypress='return (event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 45 || (event.charCode >= 48 && event.charCode <= 57))'
+                        id= "input_dob" type = "tel" placeholder="MM-DD-YYYY" onpaste="return false;" style="font-size: 16px"  maxlength="15" ng-keydown="date_format($event)"/>
+                        <!-- <input class="form-control" size="16" value="" placeholder="MM-DD-YYYY" type="text" ng-model="quotePageInput.userDob" style="background-color:white !important;border-radius:0px;border-right:1px solid #e9eaeb;"> -->
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-6 col-xs-12 two_input home3-your-your-height-weight">
+                    <label for="exampleInputEmail1" style="margin-left:0px;" class="t-ce" ng-bind-html="ui_attributes.selfie_estimate_hw_confirm"></label>
+                    <div class="clearfix"></div>
+                    <select ng-class= "{'invalid-form': formSubmitted == true && quotePageInput.selectedUserHeight === 'Select'}" ng-model="quotePageInput.selectedUserHeight" class="form-control select" style="background-color:white !important;border-radius:0px; width:135px; padding: 5px 10px; font-size:16px">
+                        <option value="Select">Select Height</option>
+                        <option value="4' 10">4' 10"</option>
+                        <option value="4' 11">4' 11"</option>
+                        <option value="5' 0">5' 0"</option>
+                        <option value="5' 1">5' 1"</option>
+                        <option value="5' 2">5' 2"</option>
+                        <option value="5' 3">5' 3"</option>
+                        <option value="5' 4">5' 4"</option>
+                        <option value="5' 5">5' 5"</option>
+                        <option value="5' 6">5' 6"</option>
+                        <option value="5' 7">5' 7"</option>
+                        <option value="5' 8">5' 8"</option>
+                        <option value="5' 9">5' 9"</option>
+                        <option value="5' 10">5' 10"</option>
+                        <option value="5' 11">5' 11"</option>
+                        <option value="6' 0">6' 0"</option>
+                        <option value="6' 1">6' 1"</option>
+                        <option value="6' 2">6' 2"</option>
+                        <option value="6' 3">6' 3"</option>
+                        <option value="6' 4">6' 4"</option>
+                        <option value="6' 5">6' 5"</option>
+                        <option value="6' 6">6' 6"</option>
+                        <option value="6' 7">6' 7"</option>
+                        <option value="6' 8">6' 8"</option>
+                        <option value="6' 9">6' 9"</option>
+                        <option value="6' 10">6' 10"</option>
+                        <option value="6' 11">6' 11"</option>
+                    </select>
+                    <input type="tel" ng-class = "{'invalid-form': formSubmitted === true && (quotePageInput.userWeight === '' || quotePageInput.userWeight === undefined || quotePageInput.userWeight === null)}" class="form-control" onkeypress="return (event.keyCode == 8 || event.keyCode == 9 || (event.charCode >= 48 && event.charCode<=57))" ng-model="quotePageInput.userWeight" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Pounds" maxlength= "3" style="background-color:white !important;border-radius:0px; font-size: 16px">
+                </div>
+            </div>
+            <hr class="home3-bottom-line-hr"/>
+        </div>
+    </div>
+
+    <div class="botm">
+        <div class="container">
+            <div class="col-md-5 col-sm-4 col-xs-4"></div>
+            <div class="col-md-2 col-sm-4 col-xs-4  btn-padding-3">
+                <div class="conti-btn" ng-click="page4(); formSubmitted= true">
+                    <i><img src="/static/images/chevron.png" style = "height: 15px; width: 15px;" alt="" class="conti-btn-img-pad home-btn-pad" ></i><label ng-bind-html="ui_attributes.selfie_estimate_next_button" style="cursor: pointer;"></label>
+                </div>
+            </div>
+            <div class="col-md-5 col-sm-4 col-xs-4"></div>
+            <div class="clearfix"></div>
+            <div ng-show="showQuoteFlag" class="col-md-12 col-sm-12 col-xs-12 visible-md visible-sm visible-lg" style="text-align:justify;padding-top:15px;color:gray; width: 98%"> *This quote assumes our estimates are 100% accurate and is applicable for a nonsmoker in excellent health purchasing a {{termDuration}}-year term life insurance policy with a $100,000 face amount.</div><br>
+              <div class = "col-md-12 col-sm-12 col-xs-12 visible-md visible-sm visible-lg"><a ng-click="openProductInfo()" class="btn btn-big" style="color:#0099cc ;padding-left:0px;">*<u>Read full product information here.</u></a></div>
+            <div ng-show="showQuoteFlag" class=" col-xs-12 visible-xs" style="text-align:center;padding-top:15px;padding-left:8px; padding-right:8px;color:gray;font-size:13px;"> *This quote assumes our estimates are 100% accurate and is applicable for a nonsmoker in excellent health purchasing a {{termDuration}}-year term life insurance policy with a $100,000 face amount.</div>
+            <div class=" col-xs-12 visible-xs" style="text-align:center"><a ng-click="openProductInfo()" class="btn btn-big" style="color:#0099cc ; padding-left:0px;">*<u>Read full product information here.</u></a></div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+  var date = document.getElementById('input_dob');
+  function checkValue(str, max) {
+  if (str.charAt(0) !== '0' || str == '00') {
+    var num = parseInt(str);
+    if (isNaN(num) || num <= 0 || num > max) num = 1;
+    str = num > parseInt(max.toString().charAt(0)) && num.toString().length == 1 ? '0' + num : num.toString();
+  };
+  return str;
+  };
+
+  date.addEventListener('input', function(e) {
+  this.type = 'tel';
+  var input = this.value;
+  if (/\D\-$/.test(input)) input = input.substr(0, input.length - 3);
+  var values = input.split('-').map(function(v) {
+    return v.replace(/\D/g, '')
+  });
+  if (values[0]) values[0] = checkValue(values[0], 12);
+  if (values[1]) values[1] = checkValue(values[1], 31);
+  var output = values.map(function(v, i) {
+    return v.length == 2 && i < 2 ? v + ' - ' : v;
+  });
+  this.value = output.join('').substr(0, 14);
+  });
+</script>
+
+<!-- <div id="footer" class="footer-main padding-40">
+      <ul>
+        <li><a style="background-color: transparent" href="https://www.lgamerica.com/corporate/financials" target="__main__">About Us</a></li>
+        <li><a style="background-color: transparent" href="https://www.lgamerica.com/corporate/privacy" target="__main__">Privacy Policy</a></li>
+        <li><a style="background-color: transparent" href="https://www.lgamerica.com/corporate/security" target="__main__">Security</a></li>
+      </ul>
+      <p>&copy; 2017 Legal & General America. All Rights Reserved. Legal & General America life insurance products are underwritten and issued by Banner Life Insurance Company, Urbana, MD and William Penn Life Insurance Company of New York, Valley Stream, NY. Banner is licensed to do business in 49 states and the District of Columbia. William Penn does business exclusively in New York; Banner does not solicit business there. 17-187. <a class = "hand" style="color: blue !important; background-color: transparent" ng-click="openLegalStuff()" >Click here </a>for additional product details. </p>
+</div> -->

@@ -1,0 +1,71 @@
+.navBar
+{
+  display: flex;
+  flex-direction: row;
+}
+.navBarPanel
+{
+  width: 15%;
+  height: 97vh;
+  background-color: #005571;
+  border: 1px solid #fff;
+  background-clip: content-box;
+  display: flex;
+  flex-direction: column;
+}
+.navBarWindow
+{
+  width: 100%;
+  height: 90vh;
+  padding: 6px 10px 1px 10px;
+  background: #F5F5F5;
+  border-bottom: solid 1px #D9D9D9;
+  color: #000;
+}
+.navBarPanelButton
+{
+  margin: 10px;
+  cursor: pointer;
+
+  width: calc(100%);
+  float: right;
+  font-size: 0.9em;
+  text-align: center;
+  padding-left: 3px;
+  line-height: 38px;
+  white-space: nowrap;
+}
+.navBarPanelButton:hover
+{
+  background: #004159;
+}
+.navBarPanelButtonActive
+{
+  background: #0079a5;
+}
+
+.navPanelLogo
+{
+  width: 125px;
+  height: 50px;
+  padding: 5px;
+}
+.navPanelIcon
+{
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+}
+.navBarLogo
+{
+  margin: 10px;
+  cursor: pointer;
+
+  width: calc(100%);
+  float: right;
+  font-size: 0.9em;
+  text-align: center;
+  padding-left: 3px;
+  line-height: 38px;
+  white-space: nowrap;
+}

@@ -1,0 +1,14 @@
+{
+  "current":
+  {
+    "apiUrl":"http://192.168.1.11:3001",
+    "kibanaURL":"http://192.168.1.11:5601",
+    "NetworkAssessedStorage":"http://30.30.30.32"
+  },
+  "":
+  {
+    "apiUrl":"http://10.161.128.222:3001",
+    "kibanaURL":"http://10.161.128.222:5601",
+    "NetworkAssessedStorage":"http://30.30.30.32"
+  }
+}

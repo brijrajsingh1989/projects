@@ -1,0 +1,2 @@
+This project created for Legal and General America.
+This project having 4 different journeys for insurance company where user can land and system can take them to Salesforce.

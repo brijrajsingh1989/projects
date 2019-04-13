@@ -1,0 +1,13 @@
+.donutChart
+{
+  cursor: pointer;
+}
+.manageSystemReportPage
+{
+  height: 89vh;
+  overflow-y: scroll;
+}
+.manageSystemReports
+{
+  margin-top: 6%;
+}

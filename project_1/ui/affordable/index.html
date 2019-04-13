@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <title>Term Life Insurance Quote | Legal &amp; General America</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta property="og:title" content="Term Life Insurance Quotes | Legal & General America">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://term.lgamerica.com/">
+    <meta property="og:description" content="Help protect your family’s future with life insurance. Get a Banner Life or William Penn term life insurance quote today.">
+    <meta property="og:image" content="https://term.lgamerica.com/static/images/dad_son_2x.jpg">
+    <base href='/'>
+
+    <!-- bower:css -->
+    <link rel="stylesheet" type="text/css" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/js/css/jquery-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/bower_components/jquery-asRange/dist/css/asRange.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/bower_components/angular-toggle-switch/angular-toggle-switch-bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/bower_components/toastr/toastr.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/bower_components/angular-tooltips/dist/angular-tooltips.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css"/>
+    <!-- endbower -->
+
+    <!-- app:css -->
+    <link rel="stylesheet" type="text/css" href="/affordable/styles/css/wizard.css"/>
+    <link rel="stylesheet" type="text/css" href="/affordable/styles/css/build.css"/>
+    <link rel="stylesheet" type="text/css" href="/affordable/styles/css/fonts.css"/>
+    <link rel="stylesheet" type="text/css" href="/affordable/styles/css/style-sheet.css"/>
+    <link rel="stylesheet" type="text/css" href="/affordable/styles/css/style.css"/>
+    <!-- app:css -->
+
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700"/>
+
+</head>
+<body ng-app="legalGeneralApp">
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-58FW9H" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>
+        var dataLayer = [];
+        var gtmcontainerid = 'GTM-58FW9H';
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+            var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', gtmcontainerid);
+    </script>
+
+    <div class="container" ng-controller="headerCtrl">
+        <div class="shadow-full">
+            <header ng-hide="loadingPageUrl == '/quote_3' || loadingPageUrl == '/home2' || loadingPageUrl =='/home3' || loadingPageUrl =='/home4' || loadingPageUrl =='/error'" id="header" class="head-Top-md">
+                <div class="col-md-7 col-xs-5 p0">
+                    <a target="__main__" href="https://www.lgamerica.com/">
+                        <div class="logo pull-left"><img src="/static/images/logo.png"></div>
+                    </a>
+                </div>
+                <div class="col-md-5 col-xs-7 p0">
+                    <div class="nav-right">
+                        <!-- <p>Call to speak to a licensed insurance agent.</p> -->
+                        <p>&nbsp;</p>
+                        <a href="tel:{{toll_free_number}}"><h2 ng-bind-html="toll_free_number"></h2></a>
+                        <p class="click-here"><a target="_blank" href="https://www.lgamerica.com/account/policies/list">Already
+                            a customer?<br class="visible-xs"> Click here.</a></p>
+                    </div>
+                </div>
+            </header>
+
+            <div ng-view="" style="min-height:80vh;"></div>
+            <div id="footer" class="footer-main padding-40">
+                <ul>
+                    <li><a style="background-color: transparent" href="https://www.lgamerica.com/corporate/financials" target="__main__">About Us</a></li>
+                    <li><a style="background-color: transparent" href="https://www.lgamerica.com/corporate/privacy" target="__main__">Privacy Policy</a></li>
+                    <li><a style="background-color: transparent" href="https://www.lgamerica.com/corporate/security" target="__main__">Security</a></li>
+                </ul>
+                <p>&copy; 2019 Legal & General America. All Rights Reserved. Legal & General America life insurance products are underwritten and issued by Banner Life Insurance Company, Urbana,
+                  MD and William Penn Life Insurance Company of New York, Valley Stream, NY. Banner products are distributed in 49 states and D.C. William Penn products are available exclusively in New York;
+                   Banner does not solicit business there. The Legal & General America companies are part of the worldwide Legal & General Group. 19-078.
+                  <a class="hand" style="color: blue !important; background-color: transparent" ng-click="openLegalStuff()">Click here </a>for additional product details. </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- bower:js -->
+    <script src="/static/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/static/bower_components/angular/angular.min.js"></script>
+    <script src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/static/bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="/static/bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="/static/bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="/static/bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="/static/bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="/static/bower_components/angular-route/angular-route.min.js"></script>
+    <script src="/static/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="/static/bower_components/angular-touch/angular-touch.min.js"></script>
+    <script src="/static/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="/static/bower_components/angular-ziptastic/release/angular-ziptastic.js"></script>
+    <script src="/static/bower_components/angular-tooltips/dist/angular-tooltips.min.js"></script>
+    <script src="/static/bower_components/fingerprintjs2/fingerprint2.js"></script>
+    <script src="/static/bower_components/stacktrace-js/dist/stacktrace-with-promises-and-json-polyfills.min.js"></script>
+    <script src="/static/bower_components/toastr/toastr.min.js"></script>
+    <script src="/static/bower_components/ng-loading-overlay/src/ng-loading-overlay.min.js"></script>
+    <script src="/static/bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
+    <script src="/static/bower_components/ng-idle/angular-idle.min.js"></script>
+    <script src="/static/bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="/static/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="/static/bower_components/jquery-backstretch/jquery.backstretch.min.js"></script>
+    <script src="/static/bower_components/angular-filter/dist/angular-filter.min.js"></script>
+    <script src="/static/bower_components/jquery-asRange/dist/jquery-asRange.min.js"></script>
+    <script src="/static/bower_components/angular-toggle-switch/angular-toggle-switch.min.js"></script>
+
+    <script src="/static/js/angular-local-storage.js"></script>
+    <script src="/static/js/jquery-ui.min.js"></script>
+    <script src="/static/js/prefixfree.min.js" type="text/javascript"></script>
+    <script src="/static/js/scripts.js"></script>
+    <script src="/static/js/crypto.js"></script>
+    <script src="/static/js/cryptoJS.js"></script>
+    <!-- Input mask library -->
+    <script src="/static/js/jquery.inputmask.bundle.min.js"></script>
+    <!-- bower:js -->
+
+    <!-- app:js -->
+    <script src="/affordable/scripts/app.js"></script>
+    <script src="/affordable/scripts/service.js"></script>
+    <script src="/affordable/scripts/generic_functions.js"></script>
+    <script src="/affordable/scripts/controllers/main.js"></script>
+    <script src="/affordable/scripts/controllers/quote_data.js"></script>
+    <script src="/affordable/scripts/controllers/quote_data_no_premium.js"></script>
+    <script src="/affordable/scripts/controllers/personal.js"></script>
+    <!-- app:js -->
+
+    <script type="text/javascript">
+        var callback = function (stackframes) {
+            var stringifiedStack = stackframes.map(function (sf) {
+                return sf.toString();
+            }).join('\n');
+        };
+        var errback = function (err) {
+            console.log(err.message);
+        };
+        StackTrace.get().then(callback).catch(errback);
+    </script>
+</body>
+</html>

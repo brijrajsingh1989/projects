@@ -1,0 +1,214 @@
+<!--
+<link rel="stylesheet" href="/static/bower_components/angular-tooltips/dist/angular-tooltips.min.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/selfie-quote/styles/css/sf_style.css" />
+<meta name="viewport" content="width=device-width, user-scalable=0">
+-->
+<div style="position:absolute;z-index:1;" bs-loading-overlay></div>
+<div class="container">
+    <header class="header-Top-md">
+        <div class="logo pull-left"><img src="/static/images/logo.png" /></div>
+        <div class="helt-call pull-right ">
+            <h4 style="color:#0099cc !important; margin-bottom:0px">SelfieQuote<sup class="sup_style">SM</sup></h4>
+            <div class="pull-right beta">BETA</div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
+</div>
+<div class="con_bg_sign top-margin-strip-home3 visible-xs" id="gradientLine"></div>
+<div class="con_bg_sign top-margin-strip-home3 visible-sm visible-md visible-lg"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p class="top-tex" ng-bind-html="ui_attributes.selfie_refined_header">
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="screen_2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-3 col-sm-2"></div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-5 home4-profile-img-center" style="display: flex; align-items:center; justify-content:center; padding-right:0px" >
+                <div class="profil_pick">
+                    <img ng-src="{{imagepreview}}" class="img-circle img-responsive home4-profile-img" alt="" style="z-index: 1;
+                        display: inline-block;object-fit: cover;" ng-hide="IsIE"/>
+                    <div id="imagepreview1" class="img-circle img-responsive home3-profile-img" style="width: 130px;height: 130px;background-size: cover;background-position: center;border-radius: 50%;image-orientation: from-image;" ng-show = "IsIE"></div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-5 col-sm-4 col-xs-7 nopad" style="padding-left:0px">
+                <div class="pd">
+                    <div class="text_type">
+                        <h1 id="calculated_premium"></h1>
+                        <h2>Monthly</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-2"></div>
+        </div>
+    <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<div class="screen_3">
+    <div class="container">
+        <div class="tabs_bott">
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-3 nopad">
+                    <h1 ng-bind-html = "ui_attributes.selfie_refined_age"></h1>
+                    <span>{{modifiedQuoteInput.userAge}} Years</span>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3 bdr nopad" style="border-right:0px solid #e5e5e5">
+                    <h1 ng-bind-html = "ui_attributes.selfie_refined_gender"></h1>
+                    <span>{{modifiedQuoteInput.userGender}}</span>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3 bdr nopad">
+                    <h1 ng-bind-html = "ui_attributes.selfie_refined_height"></h1>
+                    <span>{{modifiedQuoteInput.userHeight}}"</span>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                    <h1 ng-bind-html = "ui_attributes.selfie_refined_weight"></h1>
+                    <span>{{modifiedQuoteInput.userWeight}} lbs</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="form">
+    <div class="info-fild visible-sm visible-md visible-lg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 home4-lable-currently-smoke home4-pad-smoke" >
+                    <div class="tal-center" ><label style="margin-left:0px;" for="exampleInputEmail1" ng-bind-html = "ui_attributes.selfie_refined_smoker">
+                     <img src="/static/images/qt-tag.png"
+                       tooltips
+                       tooltip-template="Tobacco or nicotine use includes cigarettes, chewing tobacco, smokeless tobacco, more than 12 cigars per year, nicotine gum, patch, or electronic cigarette replacement devices."
+                       tooltip-hide-trigger="touchend mouseleave"
+                       tooltip-show-trigger="mouseover click"
+                       class="img-responsive bmi-img" alt="" style="display: inline;margin-bottom:2px; font-size:16px !important; ">
+                     </label>
+                     </div>
+                     <div class="clearfix"></div>
+                    <div class="martial-select">
+                        <a href="javascript:;" ng-class="(modifiedQuoteInput.userIsSmoker == 'Yes') ? 'gender-male':'gender-female'" ng-model="modifiedQuoteInput.userIsSmoker" ng-click="modifiedQuoteInput.userIsSmoker = 'Yes';changeIsSmoker();" >Yes</a>
+                        <a href="javascript:;" ng-class="(modifiedQuoteInput.userIsSmoker == 'No') ? 'gender-male':'gender-female'" ng-click="modifiedQuoteInput.userIsSmoker = 'No';changeIsSmoker();">No</a>
+                    </div>
+
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 home4-gender-pad"></div>
+            </div>
+        </div>
+    </div>
+    <div class="info-fild visible-xs" style="padding-bottom:0px !important;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6" style="padding-left:25px;padding-right:25px;">
+                    <div class="tal-center home4-question-text"><label for="exampleInputEmail1" ng-bind-html = "ui_attributes.selfie_refined_smoker">
+                      <img src="/static/images/qt-tag.png"
+                        tooltips
+                        tooltip-template="Tobacco or nicotine use includes cigarettes, chewing tobacco, smokeless tobacco, more than 12 cigars per year, nicotine gum, patch, or electronic cigarette replacement devices."
+                        tooltip-hide-trigger="mouseleave touchend"
+                        tooltip-show-trigger="mouseover click"
+                        tooltip-side = "top"
+                        class="img-responsive bmi-img" alt=""style="display: inline;margin-bottom:2px;font-size:16px;" >
+                     </label>
+                     </div>
+                     <div class="clearfix"></div>
+                      <div class="martial-select">
+                          <a href="javascript:;" ng-class="(modifiedQuoteInput.userIsSmoker == 'Yes') ? 'gender-male':'gender-female'" ng-model="modifiedQuoteInput.userIsSmoker" ng-click="modifiedQuoteInput.userIsSmoker = 'Yes';changeIsSmoker();" >Yes</a>
+                          <a href="javascript:;" ng-class="(modifiedQuoteInput.userIsSmoker == 'No') ? 'gender-male':'gender-female'" ng-click="modifiedQuoteInput.userIsSmoker = 'No';changeIsSmoker();">No</a>
+                      </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 home4-gender-pad"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="coverage-amount">
+    <div class="container" >
+        <div class="row">
+          <!--  <div class="col-lg-12 " style="padding-left:20px; padding-right:20px"> -->
+          <div  class="home4-top-linestyle">
+          </div>
+                <div class="range-bar home4-lable-currently-smoke">
+                    <h4 class="home4-question-text home4-coverage-text-lbl"><span ng-bind-html="ui_attributes.selfie_refined_coverage"></span>
+                        <b id = "faceAmountLbl"></b>
+                    </h4>
+                      <div class='slider' id='designQuality'>
+                      <div style="display: flex; justify-content:center; align-items: center">
+                      <input id="ex1" data-slider-id='ex1Slider' style = "width: 96%" type="text" data-slider-min="100000" data-slider-max="500000" data-slider-step="50000" data-slider-value=""/>
+                      </div>
+                      <div style="margin-right:1.5%">
+                        <span style="color: #0785af; font-size: 100%">$100,000</span>
+                        <span style="float: right; color: #0785af; font-size: 100%"><!--suppress HtmlUnknownTag, HtmlUnknownTag -->
+                            <p>$500,000</p></span>
+                      </div>
+                        <input class='answer' type='hidden'>
+                    </div>
+                </div>
+
+                <div class="clearfix"  style="margin-bottom: 12px"></div>
+          <!--  </div> -->
+          <!--
+            <div class="col-lg-12">
+                <div class="terms-duration1">
+                    <h4>Or modify your years of coverage!</h4>
+                    <ul>
+                        <li><a href="#">10</a></li>
+                        <li><a href="#">15</a></li>
+                        <li class="selected"><a href="#">20</a></li>
+                        <li><a href="#">25</a></li>
+                        <li><a href="#">30</a></li>
+                    </ul>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+            -->
+            <div class="home4-top-linestyle">
+            </div>
+            <div class="terms-duration1 home4-coverage-year">
+                <h4 class="home4-question-text home4-coverage-amt-bottom-pad" ng-bind-html = "ui_attributes.selfie_refined_term"></h4>
+                <ul>
+                  <li ng-model="modifiedQuoteInput.policyTenure" ng-click="modifiedQuoteInput.policyTenure = term;getQuotePriceList();" ng-class="(modifiedQuoteInput.policyTenure == term)?'selected':''" ng-repeat="term in termLength"><a>{{term}}</a></li>
+                    <!-- <li ng-model="modifiedQuoteInput.policyTenure" ng-click="modifiedQuoteInput.policyTenure = 10;getQuotePriceList();" ng-class="(modifiedQuoteInput.policyTenure == 10)?'selected':''"><a>10</a></li>
+                    <li ng-click="modifiedQuoteInput.policyTenure = 15;getQuotePriceList();" ng-class="(modifiedQuoteInput.policyTenure == 15)?'selected':''"><a>15</a></li>
+                    <li ng-click="modifiedQuoteInput.policyTenure = 20;getQuotePriceList();" ng-class="(modifiedQuoteInput.policyTenure == 20)?'selected':''"><a>20</a></li>
+                    <li ng-click="modifiedQuoteInput.policyTenure = 25;getQuotePriceList();" ng-class="(modifiedQuoteInput.policyTenure == 25)?'selected':''"><a>25</a></li>
+                    <li ng-click="modifiedQuoteInput.policyTenure = 30;getQuotePriceList();" ng-class="(modifiedQuoteInput.policyTenure == 30)?'selected':''"><a>30</a></li> -->
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+            <div class="home4-top-linestyle home-line-margin-btn">
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="botm" style="padding-bottom:0px!important;">
+    <div class="container">
+        <div class="col-md-4 col-sm-4"></div>
+
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="conti-btn_2 mar-bott"  ng-click="moveToPersonalInfo()">
+                <i><img src="/static/images/chevron.png" style = "height: 15px; width: 15px" alt="icon" class="img-cont-button2"></i><span ng-bind-html="ui_attributes.selfie_refined_button"></span>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4"></div>
+        <div class="clearfix"></div>
+        <div  class="col-md-12 col-sm-12 col-xs-12 visible-md visible-sm visible-lg" style="text-align:center;padding-bottom:15px;;color:gray;">  <a ng-click="openProductInfo()" class="btn btn-big" style="color:#0099cc ;padding-left:0px;" ><u>*Read full product information here.</u></a></div>
+        <div  class="col-xs-12 visible-xs" style="text-align:center;padding-bottom:10px;padding-left:0px; padding-right:0px;color:gray;font-size:13px;"> <a ng-click="openProductInfo()" class="btn btn-big" style="color:#0099cc ;padding-left:0px;"><u>*Read full product information here.</u></a></div>
+    </div>
+</div>
+<!-- <div id="footer" class="footer-main padding-40">
+      <ul>
+        <li><a style="background-color: transparent" href="https://www.lgamerica.com/corporate/financials" target="__main__">About Us</a></li>
+        <li><a style="background-color: transparent" href="https://www.lgamerica.com/corporate/privacy" target="__main__">Privacy Policy</a></li>
+        <li><a style="background-color: transparent" href="https://www.lgamerica.com/corporate/security" target="__main__">Security</a></li>
+      </ul>
+      <p>&copy; 2017 Legal & General America. All Rights Reserved. Legal & General America life insurance products are underwritten and issued by Banner Life Insurance Company, Urbana, MD and William Penn Life Insurance Company of New York, Valley Stream, NY. Banner is licensed to do business in 49 states and the District of Columbia. William Penn does business exclusively in New York; Banner does not solicit business there. 17-187. <a class = "hand" style="color: blue !important; background-color: transparent" ng-click="openLegalStuff()" >Click here </a>for additional product details. </p>
+</div> -->

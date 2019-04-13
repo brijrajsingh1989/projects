@@ -1,0 +1,66 @@
+<style>
+  .error{
+    font-size:175px;
+    opacity:.2;
+    text-align:right;
+    margin-top:5%;
+  }
+
+  .infocontent{
+    text-align:left;
+    margin-top:8%;
+  }
+
+  .h2{
+        font-size: 24px;
+        font-weight: 600;
+        color: #006687;
+        line-height: 30px;
+        margin-bottom: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .p{
+    margin:0;
+    font-size: 17px;
+    color: #666666;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+  }
+  @media screen and (max-width: 48.000em){
+    .error{
+      font-size:175px;
+      opacity:.2;
+      text-align:center;
+      margin-top:2%;
+    }
+
+    .infocontent{
+      margin-top:2%;
+      margin:10%;
+    }
+  }
+</style>
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-6 col-sm-12 error">
+          <div style="font-family:Arial;">404</div>
+        </div>
+
+        <div class="col-md-6 col-sm-12 infocontent">
+          <div>
+            <h2 class="h2 text-left">We're sorry!</h2>
+            <p class="p text-left">SelfieQuote is currently under construction.</p>
+            <p class="p text-left">In the meantime, find out how affordable</p>
+            <p class="p text-left">term life insurance is today.</p>
+              <div class="show-my-quote quote-btn" style="width:auto;">
+                <input class="myQuote" type="button" value="GET MY QUOTE" ng-click="routetoJournyA()">
+              </div>
+          </div>
+        </div>
+
+    </div>
+    <div class="clearfix"></div>
+</div>

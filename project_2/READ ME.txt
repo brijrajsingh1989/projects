@@ -1,0 +1,1 @@
+This project is to Analyze the syslog for Singtel and predict the future appliance failure while looking into log trends.

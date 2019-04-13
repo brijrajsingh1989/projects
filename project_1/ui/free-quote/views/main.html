@@ -1,0 +1,336 @@
+<style>
+  .invalidGender {
+    border-color: red !important;
+  }
+
+  .parent_row {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    padding-top: 5px !important;
+  }
+</style>
+<link rel="stylesheet" href="/free-quote/styles/css/custom.css" />
+<div class="gradient-line">
+  <span class="level-1"></span>
+  <span class="level-2"></span>
+  <span class="level-3"></span>
+  <span class="level-4"></span>
+</div>
+
+<div class="container">
+  <div class="row m0">
+    <div class="col-md-12 col-sm-12 col-xs-12 banner p0">
+      <div class="col-lg-5 col-lg-offset-1 col-md-5 col-sm-12 col-xs-12">
+        <h1><span>HELP PROTECT</span> your <br> family’s future <br class="hidden-xs"> with life insurance.</h1>
+      </div>
+      <div class="col-lg-5 col-lg-offset-1 col-md-6 col-sm-12 col-xs-12 get-quote-form">
+        <a id="quote-top"></a>
+        <form name="main" autocomplete="off" ng-init="formInvalid = false;" onclick="void(0)" class="ng-pristine ng-scope ng-invalid ng-invalid-required ng-valid-maxlength">
+          <h2>Get your FREE quote today.</h2>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+            <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 form-group">
+              <span>Date of Birth</span>
+              <input  ng-class="{'invalid-form': main.dob.$invalid && formInvalid}" style="padding: 7px;height:36px;" date-mask required name="dob" ng-model="quoteData.dob" ng-keyup="dob_on_change(quoteData.dob)" ng-blur="check_dob(quoteData.dob,0,1)" data-inputmask="'alias': 'mm-dd-yyyy', 'placeholder': 'MM-DD-YYYY'"
+                class="form-control" onkeypress='return (event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 45 || (event.charCode >= 48 && event.charCode <= 57))' placeholder="MM-DD-YYYY" onpaste="return false;" type="tel" maxlength="15"
+              />
+              <i class="glyphicon glyphicon-refresh glyphicon-spin" style="position: absolute; top: 47px; right: 13px; z-index: 100; color: rgb(102, 102, 102);" ng-show="reload_dob_flag"></i>
+            </div>
+            <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-6 col-xs-12 form-group p0">
+              <span>Gender</span>
+              <div class="col-lg-12 col-xs-12 gender-area">
+                <div class="lga-selector-control">
+                  <input type="radio" name="genderLg" id="genderMaleLg" value="0" ng-checked="quoteData.gender" class="hand" ng-model="quoteData.gender" ng-click="gender_change('0')">
+                  <label class="radio-inline" for="genderMaleLg" tabindex="0">
+                                                            <span class="icon"></span>
+                                                            <span class="title ng-binding">Male</span>
+                                                        </label>
+                </div>
+                <div class="lga-selector-control">
+                  <input type="radio" name="genderLg" id="genderFemaleLg" value="1" ng-click="gender_change('1')">
+                  <label class="radio-inline" for="genderFemaleLg" tabindex="0">
+                                                            <span class="icon"></span>
+                                                            <span class="title ng-binding">Female</span>
+                                                        </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+            <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 form-group">
+              <span>Height</span>
+              <select class="form-control select select-height ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" ng-class="{'invalid-form':main.height.$invalid && formInvalid}"
+                required name="height" ng-model="quoteData.height">
+                                                   <option value="" style="display: none" selected></option>
+                                                   <option ng-repeat="a in height_chart" value="{{a}}" >{{a}}</option>
+                                                </select>
+            </div>
+            <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-6 col-xs-12 form-group p0">
+              <span>Weight</span>
+              <input type="tel" ng-class="{'invalid-form':main.weight.$invalid &amp;&amp; formInvalid}" required="" name="weight" class="form-control weight new_wi ng-valid-maxlength ng-not-empty ng-dirty ng-valid-parse ng-valid ng-valid-required ng-touched"
+                maxlength="3" onkeypress="return (event.keyCode == 8 || event.keyCode == 9 || (event.charCode >= 48 &amp;&amp; event.charCode <= 57))" onpaste="return false;" ng-model="quoteData.weight" aria-invalid="false">
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+            <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 form-group">
+              <span>Health Rating </span>
+              <select class="form-control select select-height ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" ng-model="quoteData.health">
+                                                    <option value="" style="display:none" selected="selected"></option>
+                                                    <option value="1">Super Fit</option>
+                                                    <option value="2">Fit</option>
+                                                    <option value="3">Average</option>
+                                                    <option value="4">I'm working on it</option>
+                                                </select>
+            </div>
+            <div class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-6 col-xs-12 form-group p0">
+              <span>Zip Code</span>
+              <input class="form-control" required="true"  ng-class="{'invalid-form':main.dob.$invalid && formInvalid}" type="tel" name="zip" onkeypress='return (event.keyCode == 8 || event.keyCode ==9 || (event.charCode >= 48 && event.charCode <= 57))'
+                maxlength="5" onpaste="return false;" ng-model="quoteData.zip_code" id="zipcode" ng-change="zip_key_up(0,1)" />
+                <i class="glyphicon glyphicon-refresh glyphicon-spin" style="position: absolute; top: 47px; right: 13px; z-index: 100; color: rgb(102, 102, 102);" ng-show="reload_zipcode_flag"></i>
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb10 ">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 form-group p0">
+              <h3 class="quote-qun">Do you use tobacco <br class="hidden-xs"> or nicotine products? <img class="hand tool-tip" tooltips tooltip-template="Tobacco or nicotine use includes cigarettes, chewing tobacco, smokeless tobacco, more than 12 cigars per year, nicotine gum, patch, or electronic cigarette replacement devices." tooltip-smart="true" style="" src="/static/images/qun-brown.png"/></h3>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 form-group p0">
+              <div class="col-lg-12 col-xs-12 mt-30">
+                <div class="lga-selector-control">
+                  <input type="radio" name="tobbaco" id="tobbacoNo" value="false" ng-model="quoteData.tobacco">
+                  <label class="radio-inline" for="tobbacoNo" tabindex="0" ng-click="dynamicTermLength('reload_tobacco_flag')">
+                                                            <span class="icon"></span>
+                                                            <span class="title ng-binding">No</span>
+                                                        </label>
+                </div>
+                <div class="lga-selector-control">
+                  <input type="radio" name="tobbaco" id="tobbacoYes" value="true" ng-model="quoteData.tobacco">
+                  <label class="radio-inline" for="tobbacoYes" tabindex="0" ng-click="dynamicTermLength('reload_tobacco_flag')">
+                        <span class="icon"></span>
+                        <span class="title ng-binding">Yes</span>
+                  </label>
+                </div>
+                <i class="glyphicon glyphicon-refresh glyphicon-spin" style="position: absolute; top: 6px; right: 40px; z-index: 100; color: rgb(102, 102, 102);" ng-show="reload_tobacco_flag"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb15 ">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 form-group">
+              <h3 class="quote-qun mt5">Coverage amount: <img class="hand tool-tip" tooltips tooltip-template="Many experts recommend getting life insurance coverage that is 6-8 times your salary." tooltip-smart="true" style="" src="/static/images/qun-brown.png"/></h3>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 form-group p0 mt-15">
+              <select class="form-control select select-height ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" name="amount" ng-model="quoteData.amount" ng-change="putamount()">
+                                                    <option value="" selected >Select Coverage</option>
+                                                    <option ng-repeat="b in amount_range track by $index">{{b}}</option>
+                                                </select>
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb15 ">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 form-group">
+              <h3 class="quote-qun mt5">I want my policy to last: <img class="hand tool-tip" tooltips tooltip-template="Think about covering financial needs that will disappear in time. For instance, if paying for college or paying off a mortgage are major financial concerns but you're pretty sure that you won't need life insurance coverage after the kids graduate and the mortgage is paid, then it might make sense to buy a term policy that'll get you through those years." tooltip-smart="true" style="" src="/static/images/qun-brown.png"/></h3>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 form-group p0 mt-15">
+              <select class="form-control select select-height ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" ng-model="quoteData.tenure">
+                                                    <option value="">Select Policy Term</option>
+                                                    <option ng-repeat="x in term_lengths" value={{x}} class="ng-binding ng-scope">{{x}} Years</option>
+                                                </select>
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mb15 ">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 trustpilot">
+              <div class="trustpilot-widget" style="display: inline-block" data-locale="en-US" data-template-id="53aa8807dec7e10d38f59f32" data-businessunit-id="598c60430000ff0005a89026" data-style-height="85px" data-style-width="120px" data-theme="light">
+                <iframe frameborder="0" scrolling="no" title="Customer reviews powered by Trustpilot" src="https://widget.trustpilot.com/trustboxes/53aa8807dec7e10d38f59f32/index.html?locale=en-US&amp;templateId=53aa8807dec7e10d38f59f32&amp;businessunitId=598c60430000ff0005a89026&amp;styleHeight=85px&amp;styleWidth=120px&amp;theme=light"
+                  style="position: relative; height: 85px; width: 120px; border-style: none; display: block;"></iframe>
+              </div>
+            </div>
+            <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12 p0">
+              <div class="show-my-quote quote-btn">
+                <input class="myQuote" type="button" value="GET MY QUOTE" ng-click="on_show_my_quote_click()">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row m0">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 about">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+        <!-- <h2>You may be able to get $250,000 of term life insurance for as little as $10.10* a month.</h2> -->
+             <h2>You may be able to get $100,000 of term life insurance for as little as $7.00* a month.</h2>
+      </div>
+      <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12 about-left">
+        <p class="mt5">Term life insurance is an affordable way to protect your family. It provides coverage for a specific period of time, generally ranging from 10 years to 40 years. Choose a policy term to fit your family’s unique needs and budget.</p>
+        <img src="/static/images/mom_son_2x.jpg" class="img-responsive" alt="">
+        <p>Find out how affordable term life insurance is today.</p>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+          <div class="show-my-quote abt-quote">
+            <input class="myQuote" type="button" value="GET A QUOTE"  ng-click="gotoAnchor('quote-top')"/>
+          </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+          <!-- <p class="abt-note">*A $10.45 monthly premium is applicable for a 35-year-old female nonsmoker in excellent health purchasing a 10-year OPTerm life insurance policy with a $250,000 face amount.<a class = "hand" style="color: blue !important; background-color: transparent" ng-click="openLegalStuff()" > Click here for additional product information</a>.</p> -->
+          <p class="abt-note">*A $7.00 monthly premium is applicable for a 20-year-old female nonsmoker in excellent health purchasing a 10-year OPTerm life insurance policy with a $100,000 face amount. <a class = "hand" style="color: blue !important; background-color: transparent" ng-click="openLegalStuff()" > Click here for additional product information</a>.</p>
+        </div>
+      </div>
+      <div class="col-lg-7 col-md-6 col-sm-6 col-xs-12 about-widget">
+        <div class="row">
+          <div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+            <h2 class="widget-title">Term life insurance can help your <br class="hidden-xs"> family cover:</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 abt-widget">
+              <span><i class="fa fa-home"></i></span>
+              <p>Mortgage or rent <br> payments</p>
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-6 col-xs-6 abt-widget">
+              <span><i class="fa fa-shopping-cart"></i></span>
+              <p>Living <br>expenses</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-9 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 abt-widget">
+              <span><i class="fa fa-graduation-cap"></i></span>
+              <p>Education <br>costs</p>
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-6 col-xs-6 abt-widget">
+              <span><i class="fa fa-credit-card-alt"></i></span>
+              <p>Credit card <br>bills</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row m0">
+    <div class="jumbotron caret-top solid">
+      <div class="content">
+        <h2>
+										Over <span class="confident">1 million </span>customers already <span class="confident">TRUST</span> Legal & General America.
+									</h2>
+      </div>
+      <div class="caret-bottom">
+        <div class="left"></div>
+        <div class="right"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row m0">
+    <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12 testimonials">
+      <div class="trustpilot-widget" data-locale="en-US" data-template-id="53aa8912dec7e10d38f59f36" data-businessunit-id="598c60430000ff0005a89026" data-style-height="130px" data-style-width="100%" data-theme="light" data-tags="SelectedReview" data-schema-type="Organization"
+        style="position: relative;"><iframe frameborder="0" scrolling="no" title="Customer reviews powered by Trustpilot" src="https://widget.trustpilot.com/trustboxes/53aa8912dec7e10d38f59f36/index.html?locale=en-US&amp;templateId=53aa8912dec7e10d38f59f36&amp;businessunitId=598c60430000ff0005a89026&amp;styleHeight=130px&amp;styleWidth=100%25&amp;theme=light&amp;tags=SelectedReview&amp;schemaType=Organization"
+          style="position: relative; height: 130px; width: 100%; border-style: none; display: block; overflow: hidden;"></iframe></div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row m0">
+    <div class="jumbotron caret-top solid">
+      <div class="content">
+        <h2>
+										We are proud of our ratings for overall <span class="confident">FINANCIAL STRENGTH. </span>
+									</h2>
+      </div>
+      <div class="caret-bottom">
+        <div class="left"></div>
+        <div class="right"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row m0">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rating">
+      <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+        <p>Banner Life Insurance Company and William Penn Life Insurance Company of New York are the companies that underwrite and issue life insurance policies under the Legal & General America brand. We are financially strong, fiscally responsible and
+          committed to business practices that will make sure we will be here when you need us most.</p>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="show-my-quote rate-quote">
+          <input class="myQuote" type="button" value="GET A QUOTE"  ng-click="gotoAnchor('quote-top')"/>
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <h2>2018 Independent Ratings for Overall Financial Strength</h2>
+      </div>
+      <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-xs-12 text-center">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-sm-offset-0 col-xs-12">
+            <div class="info-snack-box green">
+              <h1>AA-</h1>
+              <h4>Very Strong Rating</h4>
+              <div class="caption">
+                Standard &amp; Poor's
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <div class="info-snack-box green">
+              <h1>A+</h1>
+              <h4>Superior Rating</h4>
+              <div class="caption">A.M.Best</div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <div class="info-snack-box green">
+              <h1>AA-</h1>
+              <h4>Very Strong Rating</h4>
+              <div class="caption">
+                Fitch Ratings
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row m0">
+    <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 contact-us-section" style="display:flex;justify-content:center">
+      <div class="col-lg-10 col-md-10 col-xs-12 col-sm-9" style="text-align:center">
+        <span>Call us at <span ng-bind-html="toll_free_number"></span>, Monday through Friday from 9:00am to 5:00pm to speak to a licensed life insurance agent.</span>
+      </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- quotelab -->
+<img src="//www.quotelab.com/p/5hsWAhqpmSptZuSTkyZrKW8VSfPznA.gif?u=1" width="1" height="1" border="0">
+<script>
+  $('.gender-spc a').click(function(e) {
+    e.preventDefault(); //prevent the link from being followed
+    $('.gender-spc a').removeClass('bg-color');
+    $(this).addClass('bg-color');
+  });
+</script>
+<script>
+  $('.have-nt-have a').click(function(e) {
+    e.preventDefault(); //prevent the link from being followed
+    $('.have-nt-have a').removeClass('bg-color');
+    $(this).addClass('bg-color');
+  });
+</script>
+<script>
+  $('.coverage-lasts li').click(function(e) {
+    e.preventDefault(); //prevent the link from being followed
+    $('.coverage-lasts li').removeClass('bg-color');
+    $(this).addClass('bg-color');
+  });
+</script>

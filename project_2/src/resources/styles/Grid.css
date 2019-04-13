@@ -1,0 +1,52 @@
+.rgrid
+{
+  width:100%;
+  font-size: 0.8em;
+}
+.react-grid-Header
+{
+  height: 25px !important;
+  color: #fff;
+}
+.react-grid-HeaderCell
+{
+  background: #0079a5 !important;
+  text-align: center !important;
+  border-bottom: 2px solid #10346b !important;
+}
+/* .react-grid-Row
+{
+  background-color: pink !important;
+} */
+.react-grid-Row:hover
+{
+  /* background-color: green !important; */
+}
+.react-grid-Cell
+{
+  color: #000;
+  /* background-color: pink !important; */
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #005571;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #cccccc;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #005571;
+}

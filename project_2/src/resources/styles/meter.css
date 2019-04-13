@@ -1,0 +1,12 @@
+.meter{
+  background-color: #fff;
+  margin: 5px;
+  padding: 5px;
+  box-shadow: 1px 1px #ccc;
+  /* background-color: #fff;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  margin:5px;
+  padding: 5px;
+  height: 180px; */
+}

@@ -1,0 +1,144 @@
+.manageReports
+{
+  width: 100%;
+  /* height:97vh; */
+  height: 97vh;
+  /* background: url(http://127.0.0.1:8887/bg2.jpg); */
+  z-index: 1;
+  color: #fff;
+  background-color: #343434;
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.reportStates
+{
+  /* height: 10vh; */
+  border: 0px solid #fff;
+  /* border-radius: 1rem!important; */
+  /* background-color: #10346b; */
+  background-color: #0079a5;
+  opacity: .75;
+  padding: 5px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+
+.manageShowReports
+{
+  padding: 10px;
+  color: #fff;
+}
+
+text{
+  fill:#000000;
+}
+
+.logStatesDiv
+{
+  text-align: center;
+  list-style: none;
+  margin: 0;
+  padding: 12px;
+  background-color: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  font-size: 0.8em;
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.min_padding
+{
+  padding: 5px !important;
+}
+
+.form-control
+{
+    color: #fff;
+    background-color: transparent;
+    border-radius: .25rem!important;
+    display: block;
+    min-width: 120px;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    font-weight: bold;
+}
+
+
+div.smoothie-chart-tooltip {
+  background: #444;
+  padding: 1em;
+  margin-top: 20px;
+  font-family: consolas;
+  color: white;
+  font-size: 10px;
+  pointer-events: none;
+}
+
+
+.fadeMe {
+  opacity:    0.5;
+  background: #000;
+  width:      100%;
+  height:     100%;
+  z-index:    10;
+  top:        0;
+  left:       0;
+  position:   fixed;
+}
+
+.sideBar
+{
+  text-align: center;
+  background-color: #005571;
+  border: 1px solid #fff;
+  background-clip: content-box;
+  height: 90vh;
+}
+
+.sideBarWindow
+{
+  height: 90vh;
+  padding: 6px 10px 1px 10px;
+  background: #F5F5F5;
+  border-bottom: solid 1px #D9D9D9;
+  color: #000;
+}
+
+@media (max-width: 992px) {
+  .sideBar
+  {
+    height:auto;
+  }
+  .manageReports
+  {
+    height: auto;
+  }
+  .sideBarWindow
+  {
+    height: auto;
+  }
+}
+li:hover
+{
+  font-size: 14px;
+  background-color: #444444;
+}
+.donutChart
+{
+  padding: 20px;
+}
+.styles_modal__gNwvD
+{
+  width: 800px;
+}

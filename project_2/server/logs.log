@@ -1,0 +1,76 @@
+2019-03-27 11:28:57,377 -  * Debugger is active!
+2019-03-27 11:28:57,385 -  * Debugger PIN: 315-254-493
+2019-03-27 11:28:58,241 -  * Running on http://0.0.0.0:3001/ (Press CTRL+C to quit)
+2019-03-27 11:34:01,429 - 192.168.1.11 - - [27/Mar/2019 11:34:01] "OPTIONS /api/v1/login HTTP/1.1" 200 -
+2019-03-27 11:34:01,539 - 192.168.1.11 - - [27/Mar/2019 11:34:01] "POST /api/v1/login HTTP/1.1" 200 -
+2019-03-27 11:34:01,735 - 192.168.1.11 - - [27/Mar/2019 11:34:01] "OPTIONS /api/v1/analytics HTTP/1.1" 200 -
+2019-03-27 11:34:01,782 - Starting new HTTP connection (1): 127.0.0.1:9200
+2019-03-27 11:34:01,788 - http://127.0.0.1:9200 "GET /syslog*/_search HTTP/1.1" 200 134
+2019-03-27 11:34:01,789 - GET http://127.0.0.1:9200/syslog*/_search [status:200 request:0.007s]
+2019-03-27 11:34:01,789 - > {"query":{"bool":{"filter":{"bool":{"must":[{"range":{"@timestamp":{"gte":"2019-03-27T02:34:01.640Z","lte":"2019-03-27T03:34:01.640Z","time_zone":"+08:00"}}}]}}}}}
+2019-03-27 11:34:01,789 - < {"took":1,"timed_out":false,"_shards":{"total":5,"successful":5,"skipped":0,"failed":0},"hits":{"total":0,"max_score":null,"hits":[]}}
+2019-03-27 11:34:01,795 - http://127.0.0.1:9200 "GET /syslog*/_search HTTP/1.1" 200 134
+2019-03-27 11:34:01,795 - GET http://127.0.0.1:9200/syslog*/_search [status:200 request:0.005s]
+2019-03-27 11:34:01,796 - > {"query":{"bool":{"filter":{"bool":{"must":[{"range":{"@timestamp":{"gte":"2019-03-27T02:34:01.640Z","lte":"2019-03-27T03:34:01.640Z","time_zone":"+08:00"}}},{"query_string":{"query":"SYSLOG_LOG_LEVEL:0"}}]}}}}}
+2019-03-27 11:34:01,796 - < {"took":2,"timed_out":false,"_shards":{"total":5,"successful":5,"skipped":0,"failed":0},"hits":{"total":0,"max_score":null,"hits":[]}}
+2019-03-27 11:34:01,800 - http://127.0.0.1:9200 "GET /syslog*/_search HTTP/1.1" 200 240
+2019-03-27 11:34:01,801 - GET http://127.0.0.1:9200/syslog*/_search [status:200 request:0.005s]
+2019-03-27 11:34:01,801 - > {"query":{"bool":{"must":[{"range":{"@timestamp":{"gte":"2019-03-27T02:34:01.640Z","lte":"2019-03-27T03:34:01.640Z","time_zone":"+08:00"}}},{"term":{"SYSLOG_LOG_LEVEL":0}}]}},"aggs":{"SYSLOG_HOSTNAME":{"terms":{"field":"SYSLOG_HOSTNAME.keyword","size":10}}}}
+2019-03-27 11:34:01,801 - < {"took":1,"timed_out":false,"_shards":{"total":5,"successful":5,"skipped":0,"failed":0},"hits":{"total":0,"max_score":null,"hits":[]},"aggregations":{"SYSLOG_HOSTNAME":{"doc_count_error_upper_bound":0,"sum_other_doc_count":0,"buckets":[]}}}
+2019-03-27 11:34:01,815 - http://127.0.0.1:9200 "GET /syslog*/_search HTTP/1.1" 200 135
+2019-03-27 11:34:01,815 - GET http://127.0.0.1:9200/syslog*/_search [status:200 request:0.013s]
+2019-03-27 11:34:01,815 - > {"query":{"bool":{"filter":{"bool":{"must":[{"range":{"@timestamp":{"gte":"2019-03-27T02:34:01.640Z","lte":"2019-03-27T03:34:01.640Z","time_zone":"+08:00"}}},{"query_string":{"query":"SYSLOG_LOG_LEVEL:1"}}]}}}}}
+2019-03-27 11:34:01,816 - < {"took":10,"timed_out":false,"_shards":{"total":5,"successful":5,"skipped":0,"failed":0},"hits":{"total":0,"max_score":null,"hits":[]}}
+2019-03-27 11:34:01,851 - http://127.0.0.1:9200 "GET /syslog*/_search HTTP/1.1" 200 241
+2019-03-27 11:34:01,851 - GET http://127.0.0.1:9200/syslog*/_search [status:200 request:0.035s]
+2019-03-27 11:34:01,851 - > {"query":{"bool":{"must":[{"range":{"@timestamp":{"gte":"2019-03-27T02:34:01.640Z","lte":"2019-03-27T03:34:01.640Z","time_zone":"+08:00"}}},{"term":{"SYSLOG_LOG_LEVEL":1}}]}},"aggs":{"SYSLOG_HOSTNAME":{"terms":{"field":"SYSLOG_HOSTNAME.keyword","size":10}}}}
+2019-03-27 11:34:01,851 - < {"took":32,"timed_out":false,"_shards":{"total":5,"successful":5,"skipped":0,"failed":0},"hits":{"total":0,"max_score":null,"hits":[]},"aggregations":{"SYSLOG_HOSTNAME":{"doc_count_error_upper_bound":0,"sum_other_doc_count":0,"buckets":[]}}}
+2019-03-27 11:34:01,857 - http://127.0.0.1:9200 "GET /syslog*/_search HTTP/1.1" 200 134
+2019-03-27 11:34:01,858 - GET http://127.0.0.1:9200/syslog*/_search [status:200 request:0.006s]
+2019-03-27 11:34:01,858 - > {"query":{"bool":{"filter":{"bool":{"must":[{"range":{"@timestamp":{"gte":"2019-03-27T02:34:01.640Z","lte":"2019-03-27T03:34:01.640Z","time_zone":"+08:00"}}},{"query_string":{"query":"SYSLOG_LOG_LEVEL:2"}}]}}}}}
+2019-03-27 11:34:01,858 - < {"took":2,"timed_out":false,"_shards":{"total":5,"successful":5,"skipped":0,"failed":0},"hits":{"total":0,"max_score":null,"hits":[]}}
+2019-03-27 11:34:01,865 - http://127.0.0.1:9200 "GET /syslog*/_search HTTP/1.1" 200 240
+2019-03-27 11:34:01,866 - GET http://127.0.0.1:9200/syslog*/_search [status:200 request:0.007s]
+2019-03-27 11:34:01,866 - > {"query":{"bool":{"must":[{"range":{"@timestamp":{"gte":"2019-03-27T02:34:01.640Z","lte":"2019-03-27T03:34:01.640Z","time_zone":"+08:00"}}},{"term":{"SYSLOG_LOG_LEVEL":2}}]}},"aggs":{"SYSLOG_HOSTNAME":{"terms":{"field":"SYSLOG_HOSTNAME.keyword","size":10}}}}
+2019-03-27 11:34:01,866 - < {"took":3,"timed_out":false,"_shards":{"total":5,"successful":5,"skipped":0,"failed":0},"hits":{"total":0,"max_score":null,"hits":[]},"aggregations":{"SYSLOG_HOSTNAME":{"doc_count_error_upper_bound":0,"sum_other_doc_count":0,"buckets":[]}}}
+2019-03-27 11:34:01,873 - http://127.0.0.1:9200 "GET /syslog*/_search HTTP/1.1" 200 134
+2019-03-27 11:34:01,873 - GET http://127.0.0.1:9200/syslog*/_search [status:200 request:0.006s]
+2019-03-27 11:34:01,873 - > {"query":{"bool":{"filter":{"bool":{"must":[{"range":{"@timestamp":{"gte":"2019-03-27T02:34:01.640Z","lte":"2019-03-27T03:34:01.640Z","time_zone":"+08:00"}}},{"query_string":{"query":"SYSLOG_LOG_LEVEL:3"}}]}}}}}
+2019-03-27 11:34:01,874 - < {"took":3,"timed_out":false,"_shards":{"total":5,"successful":5,"skipped":0,"failed":0},"hits":{"total":0,"max_score":null,"hits":[]}}
+2019-03-27 11:34:01,880 - http://127.0.0.1:9200 "GET /syslog*/_search HTTP/1.1" 200 240
+2019-03-27 11:34:01,881 - GET http://127.0.0.1:9200/syslog*/_search [status:200 request:0.007s]
+2019-03-27 11:34:01,881 - > {"query":{"bool":{"must":[{"range":{"@timestamp":{"gte":"2019-03-27T02:34:01.640Z","lte":"2019-03-27T03:34:01.640Z","time_zone":"+08:00"}}},{"term":{"SYSLOG_LOG_LEVEL":3}}]}},"aggs":{"SYSLOG_HOSTNAME":{"terms":{"field":"SYSLOG_HOSTNAME.keyword","size":10}}}}
+2019-03-27 11:34:01,881 - < {"took":3,"timed_out":false,"_shards":{"total":5,"successful":5,"skipped":0,"failed":0},"hits":{"total":0,"max_score":null,"hits":[]},"aggregations":{"SYSLOG_HOSTNAME":{"doc_count_error_upper_bound":0,"sum_other_doc_count":0,"buckets":[]}}}
+2019-03-27 11:34:01,888 - http://127.0.0.1:9200 "GET /syslog*/_search HTTP/1.1" 200 134
+2019-03-27 11:34:01,889 - GET http://127.0.0.1:9200/syslog*/_search [status:200 request:0.007s]
+2019-03-27 11:34:01,889 - > {"query":{"bool":{"filter":{"bool":{"must":[{"range":{"@timestamp":{"gte":"2019-03-27T02:34:01.640Z","lte":"2019-03-27T03:34:01.640Z","time_zone":"+08:00"}}},{"query_string":{"query":"SYSLOG_LOG_LEVEL:4"}}]}}}}}
+2019-03-27 11:34:01,889 - < {"took":4,"timed_out":false,"_shards":{"total":5,"successful":5,"skipped":0,"failed":0},"hits":{"total":0,"max_score":null,"hits":[]}}
+2019-03-27 11:34:01,900 - http://127.0.0.1:9200 "GET /syslog*/_search HTTP/1.1" 200 240
+2019-03-27 11:34:01,901 - GET http://127.0.0.1:9200/syslog*/_search [status:200 request:0.011s]
+2019-03-27 11:34:01,901 - > {"query":{"bool":{"must":[{"range":{"@timestamp":{"gte":"2019-03-27T02:34:01.640Z","lte":"2019-03-27T03:34:01.640Z","time_zone":"+08:00"}}},{"term":{"SYSLOG_LOG_LEVEL":4}}]}},"aggs":{"SYSLOG_HOSTNAME":{"terms":{"field":"SYSLOG_HOSTNAME.keyword","size":10}}}}
+2019-03-27 11:34:01,901 - < {"took":8,"timed_out":false,"_shards":{"total":5,"successful":5,"skipped":0,"failed":0},"hits":{"total":0,"max_score":null,"hits":[]},"aggregations":{"SYSLOG_HOSTNAME":{"doc_count_error_upper_bound":0,"sum_other_doc_count":0,"buckets":[]}}}
+2019-03-27 11:34:01,906 - http://127.0.0.1:9200 "GET /syslog*/_search HTTP/1.1" 200 134
+2019-03-27 11:34:01,907 - GET http://127.0.0.1:9200/syslog*/_search [status:200 request:0.005s]
+2019-03-27 11:34:01,907 - > {"query":{"bool":{"filter":{"bool":{"must":[{"range":{"@timestamp":{"gte":"2019-03-27T02:34:01.640Z","lte":"2019-03-27T03:34:01.640Z","time_zone":"+08:00"}}},{"query_string":{"query":"SYSLOG_LOG_LEVEL:5"}}]}}}}}
+2019-03-27 11:34:01,907 - < {"took":2,"timed_out":false,"_shards":{"total":5,"successful":5,"skipped":0,"failed":0},"hits":{"total":0,"max_score":null,"hits":[]}}
+2019-03-27 11:34:01,914 - http://127.0.0.1:9200 "GET /syslog*/_search HTTP/1.1" 200 240
+2019-03-27 11:34:01,914 - GET http://127.0.0.1:9200/syslog*/_search [status:200 request:0.006s]
+2019-03-27 11:34:01,914 - > {"query":{"bool":{"must":[{"range":{"@timestamp":{"gte":"2019-03-27T02:34:01.640Z","lte":"2019-03-27T03:34:01.640Z","time_zone":"+08:00"}}},{"term":{"SYSLOG_LOG_LEVEL":5}}]}},"aggs":{"SYSLOG_HOSTNAME":{"terms":{"field":"SYSLOG_HOSTNAME.keyword","size":10}}}}
+2019-03-27 11:34:01,915 - < {"took":4,"timed_out":false,"_shards":{"total":5,"successful":5,"skipped":0,"failed":0},"hits":{"total":0,"max_score":null,"hits":[]},"aggregations":{"SYSLOG_HOSTNAME":{"doc_count_error_upper_bound":0,"sum_other_doc_count":0,"buckets":[]}}}
+2019-03-27 11:34:01,925 - http://127.0.0.1:9200 "GET /syslog*/_search HTTP/1.1" 200 134
+2019-03-27 11:34:01,926 - GET http://127.0.0.1:9200/syslog*/_search [status:200 request:0.009s]
+2019-03-27 11:34:01,926 - > {"query":{"bool":{"filter":{"bool":{"must":[{"range":{"@timestamp":{"gte":"2019-03-27T02:34:01.640Z","lte":"2019-03-27T03:34:01.640Z","time_zone":"+08:00"}}},{"query_string":{"query":"SYSLOG_LOG_LEVEL:6"}}]}}}}}
+2019-03-27 11:34:01,926 - < {"took":4,"timed_out":false,"_shards":{"total":5,"successful":5,"skipped":0,"failed":0},"hits":{"total":0,"max_score":null,"hits":[]}}
+2019-03-27 11:34:01,938 - http://127.0.0.1:9200 "GET /syslog*/_search HTTP/1.1" 200 240
+2019-03-27 11:34:01,939 - GET http://127.0.0.1:9200/syslog*/_search [status:200 request:0.011s]
+2019-03-27 11:34:01,939 - > {"query":{"bool":{"must":[{"range":{"@timestamp":{"gte":"2019-03-27T02:34:01.640Z","lte":"2019-03-27T03:34:01.640Z","time_zone":"+08:00"}}},{"term":{"SYSLOG_LOG_LEVEL":6}}]}},"aggs":{"SYSLOG_HOSTNAME":{"terms":{"field":"SYSLOG_HOSTNAME.keyword","size":10}}}}
+2019-03-27 11:34:01,939 - < {"took":7,"timed_out":false,"_shards":{"total":5,"successful":5,"skipped":0,"failed":0},"hits":{"total":0,"max_score":null,"hits":[]},"aggregations":{"SYSLOG_HOSTNAME":{"doc_count_error_upper_bound":0,"sum_other_doc_count":0,"buckets":[]}}}
+2019-03-27 11:34:01,944 - http://127.0.0.1:9200 "GET /syslog*/_search HTTP/1.1" 200 134
+2019-03-27 11:34:01,945 - GET http://127.0.0.1:9200/syslog*/_search [status:200 request:0.005s]
+2019-03-27 11:34:01,945 - > {"query":{"bool":{"filter":{"bool":{"must":[{"range":{"@timestamp":{"gte":"2019-03-27T02:34:01.640Z","lte":"2019-03-27T03:34:01.640Z","time_zone":"+08:00"}}},{"query_string":{"query":"SYSLOG_LOG_LEVEL:7"}}]}}}}}
+2019-03-27 11:34:01,945 - < {"took":1,"timed_out":false,"_shards":{"total":5,"successful":5,"skipped":0,"failed":0},"hits":{"total":0,"max_score":null,"hits":[]}}
+2019-03-27 11:34:01,950 - http://127.0.0.1:9200 "GET /syslog*/_search HTTP/1.1" 200 240
+2019-03-27 11:34:01,950 - GET http://127.0.0.1:9200/syslog*/_search [status:200 request:0.004s]
+2019-03-27 11:34:01,950 - > {"query":{"bool":{"must":[{"range":{"@timestamp":{"gte":"2019-03-27T02:34:01.640Z","lte":"2019-03-27T03:34:01.640Z","time_zone":"+08:00"}}},{"term":{"SYSLOG_LOG_LEVEL":7}}]}},"aggs":{"SYSLOG_HOSTNAME":{"terms":{"field":"SYSLOG_HOSTNAME.keyword","size":10}}}}
+2019-03-27 11:34:01,950 - < {"took":1,"timed_out":false,"_shards":{"total":5,"successful":5,"skipped":0,"failed":0},"hits":{"total":0,"max_score":null,"hits":[]},"aggregations":{"SYSLOG_HOSTNAME":{"doc_count_error_upper_bound":0,"sum_other_doc_count":0,"buckets":[]}}}
+2019-03-27 11:34:01,952 - 192.168.1.11 - - [27/Mar/2019 11:34:01] "POST /api/v1/analytics HTTP/1.1" 200 -

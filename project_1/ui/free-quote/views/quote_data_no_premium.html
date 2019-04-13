@@ -1,0 +1,269 @@
+<style>
+.modal-dialog {
+  width: 70% !important;
+  height: 500px !important;
+  margin-left: -30% !important;
+  margin-top: 7% !important;
+}
+.coverage-amount {
+    width: 100%;
+    float: left;
+    margin: 20px 0 0px 0 !important;
+    margin-top:20px;
+    padding: 0 15%;
+}
+.ready-apply-box {
+  text-align:center;
+  <!-- border:solid 1px #e5e5e5; -->
+  padding: 2% 5% 0% 5%;
+}
+
+.consent-text {
+  text-align: center;
+  font-weight: normal;
+  font-size: 12px;
+  padding: 5% 1% 2% 1%;
+  color: #565656;
+}
+.consent-text-xs {
+  text-align: center;
+  font-weight: normal;
+  font-size: 12px;
+  padding: 30% 1% 2% 1%;
+  color: #565656;
+}
+.modify-popup-container{
+  z-index: 9999;
+  height: 185px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modify-popup-box{
+  padding: 15px 30px;
+  padding-bottom: 30px;
+  border-radius: 5px;
+  width: 60%;
+  border:0;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index:9999;
+  flex-direction:column;
+  box-shadow: 0px 4px 50px rgba(0,0,0,0.75);
+}
+
+.apply-button {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 5px 30px;
+  border-radius: 0;
+  font-family: 'Open Sans',sans-serif;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  border-color: #00AA55 !important;
+  background-color: #00AA55;
+  transition-duration: 0.25s;
+}
+
+.apply-button:hover {
+  background-color: #00AA55;
+}
+.age-through-cover h3 {
+    color: #fff;
+    font-size: 28px;
+    margin: 14px 0 0 0;
+    font-weight: 300;
+}
+.age-through-cover h3 b {
+    font-size: 28px !important;
+    font-family: arial;
+    font-weight: 600;
+}
+.age-through-cover sup{
+    top: -0.8em;
+    position: relative;
+    font-size: 50%;
+    line-height: 0;
+    vertical-align: baseline;
+}
+.age-through-cover h5 {
+    color: #fff;
+    margin: 0px;
+    font-size: 28px !important;
+    font-weight: 300;
+    margin-top: -15px !important;
+    margin-bottom: 2px !important;
+}
+@media only screen and (max-width : 512px) {
+  .coverage-amount {
+      width: 100%;
+      float: left;
+      margin: 65px 0 0px 0;
+      margin-top:25px;
+      padding: 0 5%;
+  }
+  h2.ready {
+    font-size: 22px !important;
+  }
+  .modify-popup-box{
+    padding: 15px 30px;
+    padding-bottom: 30px;
+    border-radius: 5px;
+    width: 80%;
+    border:0;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index:9999;
+    flex-direction:column;
+    box-shadow: 0px 4px 50px rgba(0,0,0,0.75);
+  }
+  .age-through-cover h3 {
+      font-size: 19px !important;
+  }
+  .age-through-cover h3 b {
+    	font-size: 19px !important;
+    }
+  .age-through-cover h5 {
+    color: #fff;
+    margin: 0px;
+    font-size: 19px !important;
+    font-weight: 300;
+    margin-top: -10px !important;
+    margin-bottom: 2px !important;
+  }
+  .adjust-quote-title{
+      margin: 0px -15px;
+  }
+}
+
+.vee {
+  color: white;
+  margin-left: 8px;
+  margin-right: 5px;
+  display: inline-block;
+  transform: scale(1.5,0.75) !important;
+}
+
+.vee-holder:hover .vee {
+  color: black;
+}
+
+</style>
+<link rel="stylesheet" href="/free-quote/styles/css/custom.css" />
+
+<div class="app-by-phone cll-apply-dx" style="margin-top: 0px !important">
+  <div style="padding: 0 5px">
+          <h2 style="color:#fff;text-align:center;"><b>Sorry!</b></h2>
+          <p style="font-size:20px">Based on the information provided, we cannot provide you an online quote at this time.<br/>
+            We recommend you speak with one of our licensed life insurance advisors to discuss your situation.</p>
+    <div class="triangle-down-two"></div>
+  </div>
+</div>
+<div class="age-through-cover-no-premium age-through-spl" style="max-height:235px; z-index: 999; margin-top:0px !important; background-color:#02a051;display:none;">
+      <h1 style="margin-top: 10px !important; color:#fff;"><b>Sorry!</b></h1>
+      <p>Based on the information provided, we cannot provide you an online quote at this time.<br/>
+        We recommend you speak with one of our licensed life insurance advisors to discuss your situation.</p>
+  <div class="triangle-down-cvr-no-premium"></div>
+</div>
+<input type="hidden" id="hiddenFaceamount" style="display:none;"/>
+<div class="coverage-amount">
+    <div class="ready-apply-box">
+      <div class="info-fild" style="border-bottom:none;padding:0% !important">
+        <label>Please complete the information below to speak with a licensed Legal & General America agent who can review your situation and provide you a quote.</label>
+      </div>
+
+      <div class="info-fild" style="border-bottom:none">
+      <div class="row">
+       <div class="col-md-12">
+      </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <label>First Name</label>
+            <input maxlength= "35" onpaste="return false;" onkeypress='return (event.keyCode == 8 || event.keyCode == 9 || event.charCode == 46 || event.charCode == 32 ||(event.charCode >=65 && event.charCode <=90) ||(event.charCode>=97 && event.charCode <=122) || event.charCode == 45 || event.charCode == 39 || event.charCode == 96 ||( event.charCode >= 128 && event.charCode <= 256))' required name="fn" ng-model="personal_info.first_name" class="form-control" >
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <label>Last Name</label>
+            <input maxlength= "35" onpaste="return false;" onkeypress='return (event.keyCode == 8 || event.keyCode == 9 || event.charCode == 46 || event.charCode == 32 ||(event.charCode >=65 && event.charCode <=90) ||(event.charCode>=97 && event.charCode <=122) || event.charCode == 45 || event.charCode == 39 || event.charCode == 96 ||( event.charCode >= 128 && event.charCode <= 256))' required name="fn" ng-model="personal_info.last_name" class="form-control" >
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <label>Phone Number</label>
+            <input maxlength= "12" onpaste="return false;" type="tel" ng-blur="checkMobile(personal_info.mobile_number,0)" ng-keydown = "mobileNumberInput($event)" onkeypress='return ((event.keyCode == 8 || event.keyCode == 9)||(event.charCode >= 48 && event.charCode<=57))' required name="fn" ng-model="personal_info.mobile_number" class="form-control" >
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <label>Email Address</label>
+            <input maxlength= "35" onpaste="return false;" ng-blur="checkEmail(personal_info.email_address,0);" onkeypress='return (event.keyCode !== 32)' required name="fn" ng-model="personal_info.email_address" class="form-control" >
+        </div>
+      </div>
+      <div class="btn-back-now" style="padding-top:20px;padding-bottom:3%;">
+        <ul style="padding-left: 0;">
+          <li class="hand"><a style="margin-left:0 !important;border:none" ng-click="verifyMobileNumber()">CONTINUE</a></li>
+        </ul>
+      </div>
+      <div class="consent-text visible-md visible-lg visible-sm" style="text-align:left !important">
+        By clicking "Continue", I consent to receive phone calls, emails, and text messages from Legal & General America, its financial professionals, or third parties calling on its behalf, regarding its products and services at the phone number(s) above, including my wireless number if provided. I understand these calls may be generated using an automatic telephone dialing system or prerecorded voice message for telemarketing purposes. I understand to make a purchase I do not need to consent to receive calls from Legal & General America and can instead call a financial professional directly at <span ng-bind-html="toll_free_number"></span>. I also agree to this website's <a target="_self" href="/free-quote/terms_documents/docs.privacy.policy.LU1236.pdf" download="docs.privacy.policy.LU1236.pdf">Privacy Policy</a>.
+      </div>
+      <div class="consent-text-xs visible-xs">
+        By clicking "Continue", I consent to receive phone calls, emails, and text messages from Legal & General America, its financial professionals, or third parties calling on its behalf, regarding its products and services at the phone number(s) above, including my wireless number if provided. I understand these calls may be generated using an automatic telephone dialing system or prerecorded voice message for telemarketing purposes. I understand to make a purchase I do not need to consent to receive calls from Legal & General America and can instead call a financial professional directly at <span ng-bind-html="toll_free_number"></span>. I also agree to this website's <a target="_self" href="/free-quote/terms_documents/docs.privacy.policy.LU1236.pdf" download="docs.privacy.policy.LU1236.pdf">Privacy Policy</a>.
+      </div>
+    </div>
+  </div>
+    </div>
+	<div class="container">
+		<div class="row m0">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 jumbotron caret-top page-two-banner">
+				<img src="/static/images/dad_daughter_2x.jpg" class="img-responsive">
+				<div class="col-lg-6 col-lg-offset-6 col-md-6 col-md-offset-6 col-sm-6 col-sm-offset-6 col-xs-12 banner-text">
+					<h2>Life insurance is about <br><span class="confident">PROTECTING</span> the people  <br> who depend on you.</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row m0">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 why-lga p0">
+				<div class="col-lg-10 col-lg-offset-1 col-md-11 col-md-offset-1 col-sm-12 col-xs-12">
+					<h2>Why do customers choose Legal & General America for life insurance? </h2>
+				</div>
+				<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+					<ul class="checklist">
+						<li>We have been providing financial protection through life insurance for over 65 years.</li>
+						<li>We are financially strong. Rated A+ (Superior) by A.M. Best and AA- (Very Strong) by Standard & Poor’s and Fitch.</li>
+						<li>We insure the lives of over 1 million American policyholders.</li>
+						<li>We have a history going back over 180 years. Our parent company, Legal & General, was founded in London in 1836.</li>
+						<li>We are committed to business practices that reduce our impact on the environment.</li>
+					</ul>
+				</div>
+				<!--
+				<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+					<div class="show-my-quote ">
+						<input class="myQuote apply-now" type="button" value="APPLY NOW">
+					</div>
+				</div>
+				-->
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row m0">
+			<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 contact-us-section">
+				<div class="col-lg-10 col-md-10 col-xs-12 col-sm-9">
+					<span>Call us at <span style="float: none" ng-bind-html="toll_free_number"></span>, Monday through Friday from 9:00am to 5:00pm to speak to a licensed life insurance agent.</span>
+				</div>
+				<div class="col-lg-2 col-md-2 col-xs-12 col-sm-3">
+					<a href="#" class="btn btn-default call-btn">CALL TO APPLY</a>
+				</div>
+			</div>
+		</div>
+	</div>
+<iframe src="//www.quotelab.com/p/5hsWAhqpmSptZuSTkyZrKW8VSfPznA?u=2" width="1" height="1" frameborder="0"></iframe>
+<script>
+	$('.terms-duration li').click(function(e) {
+    e.preventDefault(); //prevent the link from being followed
+    $('.terms-duration li').removeClass('selected');
+    $(this).addClass('selected');
+});
+</script>

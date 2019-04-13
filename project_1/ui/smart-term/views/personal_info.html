@@ -1,0 +1,81 @@
+<!--suppress ALL -->
+
+<div class="btm-color-bg"></div>
+<form name="personal" ng-init="formInvalid=false;" style="padding-left:30px !important;padding-right:30px !important" autocomplete="off">
+<div class="cls"></div>
+  <div class="form-group">
+ <div class="form">
+	<div class="header-about" style="margin: 0px">
+    <div class="col-md-12">
+      <h1>Provide your basic information and we will provide you with a term life insurance quote.</h1>
+    </div>
+    <div class="row-bottom"><span class="chevron bottom"></span></div>
+  </div>
+    <div class="info-fild">
+    <div class="row">
+     <div class="col-md-12">
+    <h2 style="text-align:center">Contact Information</h2>
+    </div>
+    <div class="col-md-12 col-md-offset-3">
+      <div class="col-md-3 col-sm-6 col-xs-12">
+          <label for="exampleInputEmail1" >First Name</label>
+          <input maxlength= "35"  onpaste="return false;" ng-class= "{'invalid-form': personal.fn.$invalid ==true  && formInvalid == true}" onkeypress='return (event.keyCode == 8 || event.keyCode == 9 || event.charCode == 46 || event.charCode == 32 ||(event.charCode >=65 && event.charCode <=90) ||(event.charCode>=97 && event.charCode <=122) || event.charCode == 45 || event.charCode == 39 || event.charCode == 96 ||( event.charCode >= 128 && event.charCode <= 256))' required name="fn" ng-model="personalInfo.firstName" class="form-control" id="firstNameID1" aria-describedby="emailHelp" type="Name" >
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+          <label for="exampleInputEmail1">Last Name</label>
+          <input ng-class= "{'invalid-form': personal.ln.$invalid && formInvalid}" maxlength= "35" onpaste="return false;" onkeypress='return (event.keyCode == 8 || event.keyCode == 9 || event.charCode == 46 || event.charCode == 32 ||(event.charCode >=65 && event.charCode <=90) ||(event.charCode>=97 && event.charCode <=122) || event.charCode == 45 || event.charCode == 39 || event.charCode == 96 ||( event.charCode >= 128 && event.charCode <= 256))'  required name="ln" ng-model="personalInfo.lastName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" type="Name">
+      </div>
+    </div>
+  </div></div>
+    <div class="clearfix"></div>
+    <div class="info-fild"><div class="row">
+      <div class="col-md-12 col-md-offset-3">
+      <div class="col-md-3 col-sm-6 col-xs-12" uib-dropdown on-toggle="toggled(open)">
+          <label for="exampleInputEmail1" class="hand" uib-dropdown-toggle >Contact Number<span class="bs-caret"></span><span class="contact-drop-title cls-361"> {{personalInfo.contactType}}</span></label>
+          <input onpaste= "return false" ng-class= "{'invalid-form': personal.contact1.$invalid && formInvalid}" maxlength="12" onkeypress='return ((event.keyCode == 8 || event.keyCode == 9)||(event.charCode >= 48 && event.charCode<=57))' ng-model="personalInfo.mobileNumber" name="contact1" ng-blur="checkMobile(personalInfo.mobileNumber,0);" required class="form-control top-mrg" aria-describedby="emailHelp" placeholder="xxx-xxx-xxxx" type="tel" autocomplete="false" ng-keydown = "mobileNumberInput($event)" >
+        </div>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+          <label for="exampleInputEmail1">Email Address</label>
+          <input style="margin-top: 0px !important;" class="form-control topInput" maxlength= "50" onpaste="return false;" onkeypress='return (event.keyCode !== 32)'  ng-class= "{'invalid-form': personal.email.$invalid && formInvalid}" ng-blur="checkEmail(personalInfo.emailAddress,0);" required name= "email" ng-model="personalInfo.emailAddress" id="exampleInputEmail1" aria-describedby="emailHelp" >
+        </div>
+      </div>
+      <div class="col-md-3"></div>
+    </div></div>
+    <div class="clearfix"></div>
+  </div>
+</div>
+  <div>
+  <div class="botm">
+    <div class="col-md-4 col-sm-2"></div>
+    <div class="col-md-2 col-sm-4 visible-lg visible-md visible-sm" ng-click="personal_info_back();">
+      <div class="back-btn" >BACK</div>
+    </div>
+    <div class="col-md-2 col-sm-4 visible-xs" ng-click="personal_info_back();" style="padding-left:0px;padding-right:0px;">
+      <div class="back-btn">BACK</div>
+    </div>
+    <div class="col-md-2 col-sm-4" style="padding-left:0px; padding-right:0px;">
+        <div class="conti-btn" style="display: flex;align-items: center;justify-content: center;" ng-click="personal_submit();formInvalid=true;"><img src="/static/images/cont-bg.png" style="height:15px; width:15px; margin-right:5px">APPLY NOW</div>
+    </div>
+    <div class="col-md-4 col-sm-2"></div>
+    <div class="clearfix"></div>
+  </div>
+</div>
+</form>
+<div class="container">
+  <div class="col-md-12">
+    <div class="fot-text">
+      By clicking "Apply Now", I consent to receive phone calls, emails, and text messages from Legal & General America, its financial professionals, or third parties calling on its behalf, regarding its products and services at the phone number(s) above, including my wireless number if provided. I understand these calls may be generated using an automatic telephone dialing system or prerecorded voice message for telemarketing purposes. I understand to make a purchase I do not need to consent to receive calls from Legal & General America and can instead call a financial professional directly at <span ng-bind-html="toll_free_number"></span>. I also agree to this website's <a target="_self" href="/smart-term/terms_documents/docs.privacy.policy.LU1236.pdf" download="docs.privacy.policy.LU1236.pdf">Privacy Policy</a>.
+    </div>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+<div class="clearfix"></div>
+<div id="pixels"></div>
+<script type="text/javascript">
+	$().ready(function() {
+    $('#getvalue').click(function(){
+        $('#value').val($('input:radio[name=radAnswer]:checked').val());
+	  });
+   });
+</script>
